@@ -131,3 +131,17 @@ export const ListIcon = styled.img`
     margin-bottom: 0px;
   }
 `
+
+export const StyledList = styled.ul`
+  margin-top: 10px; 
+  list-style-type: disc !important;
+  margin-left: 20px !important;
+  padding-left: 0 !important;
+  gap: 8px;
+`;
+
+export const StyledListItem = styled.li`
+  color: white;
+  font-size: 24px;
+  letter-spacing: wider;
+`;

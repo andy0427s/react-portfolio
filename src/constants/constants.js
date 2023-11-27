@@ -1,39 +1,125 @@
+export const skills = [
+  {
+    title: "HTML",
+    icon: "/images/skills/html.png",
+  },
+  {
+    title: "CSS/SASS",
+    icon: "/images/skills/css.png",
+  },
+  {
+    title: "JavaScript",
+    icon: "/images/skills/javascript.png",
+  },
+  {
+    title: "TypeScript",
+    icon: "/images/skills/typescript.png",
+  },
+  {
+    title: "React",
+    icon: "/images/skills/reactjs.png",
+  },
+  {
+    title: "Redux",
+    icon: "/images/skills/redux.png",
+  },
+  {
+    title: "Node JS",
+    icon: "/images/skills/nodejs.png",
+  },
+  {
+    title: "Git",
+    icon: "/images/skills/git.png",
+  },
+  {
+    title: "MongoDB",
+    icon: "/images/skills/mongodb.png",
+  },
+  {
+    title: "Figma",
+    icon: "/images/skills/figma.png",
+  }
+];
+
+
 export const projects = [
   {
-    title: 'MERN Memories',
-    description: "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
-      image: '/images/1.png',
-      tags: ['Mongo', 'Express', 'React', 'Node'],
-    source: 'https://google.com',
-    visit: 'https://google.com',
-    id: 0,
+    name: "Petly",
+    description:
+      "A web application that helps pets and their owners find each other. It allows users to post and view adverts to sell or put pets in good hands, contact owners, find lost pets and view pet news.",
+    tags: [
+      {
+        name: "react",
+      },
+      {
+        name: "nodejs",
+      },
+      {
+        name: "emotion",
+      },
+      {
+        name: "formik",
+      },
+      {
+        name: "yup",
+      },
+      {
+        name: "mongodb",
+      },
+    ],
+    image: "/images/projects/petly.png",
+    sourceCodeLink: "https://github.com/velogitara/petly-project-front",
+    deployedLink: "https://velogitara.github.io/petly-project-front",
   },
   {
-    title: 'E-Commerce',
-    description:"While building it you're going to learn many advanced React & JavaScript topics, as well as how to use Stripe for card transactions. On top of that, at the end of the video, you will have this unique and complex webshop app that you will be able to add to your portfolio. And trust me, e-commerce applications are impressive.",
-    image: '/images/2.png',
-    tags: ['React', 'JavaScript'],
-    source: 'https://google.com',
-    visit: 'https://google.com',
-    id: 1,
+    name: "Filmoteka",
+    description:
+      "Web-based platform that enables users to keep track of new movies to watch, view their IMDb ratings and info, add films to own library and watch trailers.",
+    tags: [
+      {
+        name: "javascript",
+      },
+      {
+        name: "restapi",
+      },
+      {
+        name: "scss",
+      },
+      {
+        name: "parcel",
+      },
+    ],
+    image: "/images/projects/filmoteka.png",
+    sourceCodeLink: "https://github.com/mariia-moroz/goit-filmoteka",
+    deployedLink: "https://mariia-moroz.github.io/goit-filmoteka",
   },
   {
-    title: 'WebRTC App',
-    description: "This is a code repository for the corresponding YouTube video. In this tutorial, we're going to build and deploy a React Video Chat Application using WebRTC.",
-      image: '/images/3.jpg',
-      tags: ['React', 'WebRTC'],
-    source: 'https://google.com',
-    visit: 'https://google.com',
-    id: 2,
-  },
-  {
-    title: 'Unichat',
-    description: "This is a code repository for the corresponding video tutorial. In this video, we will create a full Realtime Chat Application",
-    image: '/images/4.jpg',
-    tags: ['React', 'ChatEngine', 'Firebase'],
-    source: 'https://google.com',
-    visit: 'https://google.com',
-    id: 3,
+    name: "Smart Metering Systems",
+    description:
+      "Web application for Smart Metering Systems UK, which serves as an interactive map showing the location and information of installed smart meters that monitor household energy consumption.",
+    tags: [
+      {
+        name: "javascript",
+      },
+      {
+        name: "mongodb",
+      },
+      {
+        name: "springboot",
+      },
+      {
+        name: "springsecurity",
+      },
+      {
+        name: "leaflet",
+      },
+      {
+        name: "cicd",
+      },
+    ],
+    image: "/images/projects/sms.png",
+    sourceCodeLink: "https://github.com/mariia-moroz/sms",
+    deployedLink: null,
   },
 ];
 
@@ -41,7 +127,7 @@ export const experiences = [
   {
     title: "React.js Developer",
     company_name: "Starbucks",
-    icon: "/images/starbucks.png",
+    icon: "/images/experiences/starbucks.png",
     iconBg: "#383E56",
     date: "March 2020 - April 2021",
     points: [
@@ -54,7 +140,7 @@ export const experiences = [
   {
     title: "React Native Developer",
     company_name: "Tesla",
-    icon: "/images/tesla.png",
+    icon: "/images/experiences/tesla.png",
     iconBg: "#E6DEDD",
     date: "Jan 2021 - Feb 2022",
     points: [
@@ -67,7 +153,7 @@ export const experiences = [
   {
     title: "Web Developer",
     company_name: "Shopify",
-    icon: "/images/shopify.png",
+    icon: "/images/experiences/shopify.png",
     iconBg: "#383E56",
     date: "Jan 2022 - Jan 2023",
     points: [
@@ -80,7 +166,7 @@ export const experiences = [
   {
     title: "Full stack Developer",
     company_name: "Meta",
-    icon: "/images/meta.png",
+    icon: "/images/experiences/meta.png",
     iconBg: "#E6DEDD",
     date: "Jan 2023 - Present",
     points: [
@@ -91,3 +177,4 @@ export const experiences = [
     ],
   },
 ];
+

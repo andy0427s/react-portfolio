@@ -49,15 +49,15 @@ const ExperienceCard = ({ experience }) => {
           </p>
         </div>
   
-        <ul style={{ marginTop: '10px', listStyleType: 'disc', marginLeft: '0px', gap: '8px' }}>
-          {experience.points.map((point, index) => (
-            <li
-              key={`experience-point-${index}`}
-              style={{ color: 'white', fontSize: '24px', paddingLeft: '4px', letterSpacing: 'wider' }}
-            >
-              {point}
-            </li>
-          ))}
+        <ul className="bullet-list" style={{ marginTop: '10px' }}>
+            {experience.points.map((point, index) => (
+                <li
+                key={`experience-point-${index}`}
+                style={{ color: 'white', fontSize: '24px', paddingLeft: '4px', letterSpacing: 'wider' }}
+              >
+                {point}
+              </li>
+            ))}
         </ul>
       </VerticalTimelineElement>
     );
