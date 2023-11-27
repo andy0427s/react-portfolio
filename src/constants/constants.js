@@ -1,0 +1,93 @@
+export const projects = [
+  {
+    title: 'MERN Memories',
+    description: "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
+      image: '/images/1.png',
+      tags: ['Mongo', 'Express', 'React', 'Node'],
+    source: 'https://google.com',
+    visit: 'https://google.com',
+    id: 0,
+  },
+  {
+    title: 'E-Commerce',
+    description:"While building it you're going to learn many advanced React & JavaScript topics, as well as how to use Stripe for card transactions. On top of that, at the end of the video, you will have this unique and complex webshop app that you will be able to add to your portfolio. And trust me, e-commerce applications are impressive.",
+    image: '/images/2.png',
+    tags: ['React', 'JavaScript'],
+    source: 'https://google.com',
+    visit: 'https://google.com',
+    id: 1,
+  },
+  {
+    title: 'WebRTC App',
+    description: "This is a code repository for the corresponding YouTube video. In this tutorial, we're going to build and deploy a React Video Chat Application using WebRTC.",
+      image: '/images/3.jpg',
+      tags: ['React', 'WebRTC'],
+    source: 'https://google.com',
+    visit: 'https://google.com',
+    id: 2,
+  },
+  {
+    title: 'Unichat',
+    description: "This is a code repository for the corresponding video tutorial. In this video, we will create a full Realtime Chat Application",
+    image: '/images/4.jpg',
+    tags: ['React', 'ChatEngine', 'Firebase'],
+    source: 'https://google.com',
+    visit: 'https://google.com',
+    id: 3,
+  },
+];
+
+export const experiences = [
+  {
+    title: "React.js Developer",
+    company_name: "Starbucks",
+    icon: "/images/starbucks.png",
+    iconBg: "#383E56",
+    date: "March 2020 - April 2021",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
+  {
+    title: "React Native Developer",
+    company_name: "Tesla",
+    icon: "/images/tesla.png",
+    iconBg: "#E6DEDD",
+    date: "Jan 2021 - Feb 2022",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
+  {
+    title: "Web Developer",
+    company_name: "Shopify",
+    icon: "/images/shopify.png",
+    iconBg: "#383E56",
+    date: "Jan 2022 - Jan 2023",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
+  {
+    title: "Full stack Developer",
+    company_name: "Meta",
+    icon: "/images/meta.png",
+    iconBg: "#E6DEDD",
+    date: "Jan 2023 - Present",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
+];
