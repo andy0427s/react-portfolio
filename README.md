@@ -1,7 +1,11 @@
-## Personal Portfolio
+## My React Portfolio
 
-### [Live Site](https://jsmasterypro.com)
+1.	Navigate to Your Project Directory:
 
-![Portfolio Website](https://i.ibb.co/WgPMpts/image.png)
+cd path/to/your/ReactProfolio
 
+
+2.	Run Build and Export Commands:
+
+npx next build && npx next export
 
