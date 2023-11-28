@@ -3,7 +3,7 @@ import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles
 import { skills } from '../../constants/constants'
 
 const Technologies = () =>  (
-  <Section nopadding id="tech">
+  <Section nopadding id="skills">
     <SectionDivider divider />
     <SectionTitle>Technical Skills</SectionTitle>
     <SectionText>
@@ -47,7 +47,7 @@ const TechCard = ({ index, title, icon }) => {
   // Inline styles for the paragraph
   const paragraphStyle = {
     color: 'white',
-    fontSize: '20px', // Default font size
+    fontSize: '2rem', // Default font size
     fontWeight: '600', // Semibold
     textAlign: 'center',
   };

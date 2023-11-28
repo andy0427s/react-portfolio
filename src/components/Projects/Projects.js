@@ -45,7 +45,7 @@ const ProjectCard = ({ project, index }) => {
     project;
   const cardStyles = {
     width: cardWidth,
-    height: '600px',
+    height: '500px',
     border: '1px solid transparent',
     borderRadius: '20px',
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
@@ -79,8 +79,8 @@ const ProjectCard = ({ project, index }) => {
   };
 
   const linkButtonStyles = {
-    width: '50px', // Increase the width as needed
-    height: '50px', // Increase the height as needed
+    width: '40px', // Increase the width as needed
+    height: '40px', // Increase the height as needed
     borderRadius: '50%',
     display: 'flex',
     justifyContent: 'center',
@@ -102,13 +102,13 @@ const ProjectCard = ({ project, index }) => {
     marginTop: '20px',
     color: 'white',
     fontWeight: 'bold',
-    fontSize: '40px',
+    fontSize: '2.5rem',
   };
 
   const descriptionStyles = {
     marginTop: '24px',
     color: '#6b7280',
-    fontSize: '24px',
+    fontSize: '2rem',
     color: '#fff'
   };
 
@@ -116,7 +116,7 @@ const ProjectCard = ({ project, index }) => {
     marginTop: '10px',
     display: 'inline-block',
     marginRight: '8px',
-    fontSize: '20px',
+    fontSize: '1.75rem',
     color: '#93c5fd',
   };
 

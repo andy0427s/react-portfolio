@@ -15,7 +15,7 @@ const ExperienceCard = ({ experience }) => {
         }}
         contentArrowStyle={{ borderRight: "7px solid #232631" }}
         date={
-            <div style={{ fontSize: '24px', marginRight:"24px", marginLeft:"24px"}}> {/* Adjust fontSize and color as needed */}
+            <div style={{ fontSize: '2rem', marginRight:"1.5rem", marginLeft:"1.5rem"}}> {/* Adjust fontSize and color as needed */}
               {experience.date}
             </div>
           }
@@ -41,19 +41,19 @@ const ExperienceCard = ({ experience }) => {
         }
       >
         <div>
-          <h3 style={{ color: 'white', fontSize: '30px', fontWeight: 'bold' }}>
+          <h3 style={{ color: 'white', fontSize: '2.5rem', fontWeight: 'bold' }}>
             {experience.title}
           </h3>
-          <p style={{ color: '#d1d5db', fontSize: '24px', fontWeight: '600', margin: 0 }}>
+          <p style={{ color: '#d1d5db', fontSize: '2rem', fontWeight: '600', margin: 0 }}>
             {experience.company_name}
           </p>
         </div>
   
-        <ul className="bullet-list" style={{ marginTop: '10px' }}>
+        <ul className="bullet-list" style={{ marginTop: '0.625rem' }}>
             {experience.points.map((point, index) => (
                 <li
                 key={`experience-point-${index}`}
-                style={{ color: 'white', fontSize: '24px', paddingLeft: '4px', letterSpacing: 'wider' }}
+                style={{ color: 'white', fontSize: '2rem', paddingLeft: '0.5rem', letterSpacing: 'wider' }}
               >
                 {point}
               </li>
@@ -64,7 +64,7 @@ const ExperienceCard = ({ experience }) => {
   };
 
 const Experience = () =>  (
-  <Section nopadding id="tech">
+  <Section nopadding id="experiences">
     <SectionDivider divider />
     <SectionTitle>Experience</SectionTitle>
     <SectionText>
