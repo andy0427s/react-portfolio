@@ -9,3 +9,4 @@ cd path/to/your/ReactProfolio
 
 npx next build && npx next export
 
+https://tsanganlee-dev.netlify.app/
