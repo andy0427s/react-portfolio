@@ -68,8 +68,8 @@ export const projects = [
       },
     ],
     image: "/images/projects/petly.png",
-    sourceCodeLink: "https://github.com/velogitara/petly-project-front",
-    deployedLink: "https://velogitara.github.io/petly-project-front",
+    sourceCodeLink: "https://github.com/andy0427s/linebotTeacher",
+    deployedLink: null,
   },
   {
     name: "Filmoteka",
@@ -90,8 +90,8 @@ export const projects = [
       },
     ],
     image: "/images/projects/filmoteka.png",
-    sourceCodeLink: "https://github.com/mariia-moroz/goit-filmoteka",
-    deployedLink: "https://mariia-moroz.github.io/goit-filmoteka",
+    sourceCodeLink: "https://github.com/andy0427s/Flask-personal-portfolio",
+    deployedLink: null,
   },
   {
     name: "Smart Metering Systems",
@@ -118,7 +118,7 @@ export const projects = [
       },
     ],
     image: "/images/projects/sms.png",
-    sourceCodeLink: "https://github.com/mariia-moroz/sms",
+    sourceCodeLink: "https://github.com/andy0427s/Office-Management-System",
     deployedLink: null,
   },
 ];
