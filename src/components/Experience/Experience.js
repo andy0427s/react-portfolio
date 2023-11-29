@@ -8,7 +8,7 @@ const ExperienceCard = ({ experience }) => {
     return (
       <VerticalTimelineElement
         contentStyle={{
-          background: "#1d1836",
+          background: "rgba(255, 255, 255, 0.1)",
           color: "#fff",
         //   width: '400px',
         //   minHeight: '600px'
@@ -19,7 +19,7 @@ const ExperienceCard = ({ experience }) => {
               {experience.date}
             </div>
           }
-        iconStyle={{ background: experience.iconBg, width: '60px', height:'60px' }}
+        iconStyle={{ background: experience.iconBg, width: '6rem', height:'6rem' }}
         icon={
           <div style={{
             display: 'flex', 
@@ -64,7 +64,7 @@ const ExperienceCard = ({ experience }) => {
   };
 
 const Experience = () =>  (
-  <Section  id="experiences">
+  <Section id="experiences">
     <SectionDivider divider />
     <SectionTitle>Experience</SectionTitle>
     <SectionText>
