@@ -144,3 +144,20 @@ text-align: center;
   font-size: 1.5rem;
 }
 `;
+
+// Styled component for the grid container
+export const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 150px); // 6 columns, each 150px wide
+  grid-column-gap: 2rem; // Gap between columns
+  justify-content: center; // Center the entire grid
+  
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(3, 150px); // 3 columns on smaller screens
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: repeat(2, 150px); // 2 columns on very small screens
+  }
+`;

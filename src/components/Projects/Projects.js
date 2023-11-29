@@ -15,7 +15,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 
 const Projects = () => (
-  <Section nopadding id="projects">
+  <Section id="projects">
     <SectionDivider divider/>
     <SectionTitle >Projects</SectionTitle>
     

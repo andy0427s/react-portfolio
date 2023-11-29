@@ -64,7 +64,7 @@ const ExperienceCard = ({ experience }) => {
   };
 
 const Experience = () =>  (
-  <Section nopadding id="experiences">
+  <Section  id="experiences">
     <SectionDivider divider />
     <SectionTitle>Experience</SectionTitle>
     <SectionText>
