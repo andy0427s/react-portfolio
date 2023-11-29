@@ -3,6 +3,8 @@ import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles
 import {VerticalTimeline, VerticalTimelineElement} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { experiences } from "../../constants/constants";
+import { DateText, TitleText, CompanyName, PointItem, ResponsiveIconContainer} from './ExperienceStyles'; // Import from wherever you've defined them
+
 
 const ExperienceCard = ({ experience }) => {
     return (
@@ -15,19 +17,11 @@ const ExperienceCard = ({ experience }) => {
         }}
         contentArrowStyle={{ borderRight: "7px solid #232631" }}
         date={
-            <div style={{ fontSize: '2rem', marginRight:"1.5rem", marginLeft:"1.5rem"}}> {/* Adjust fontSize and color as needed */}
-              {experience.date}
-            </div>
+          <DateText>{experience.date}</DateText>
           }
-        iconStyle={{ background: experience.iconBg, width: '6rem', height:'6rem' }}
+        iconStyle={{ background: experience.iconBg }}
         icon={
-          <div style={{
-            display: 'flex', 
-            justifyContent: 'center', 
-            alignItems: 'center', 
-            width: '100%', 
-            height: '100%'
-          }}>
+          <ResponsiveIconContainer>
             <img
               src={experience.icon}
               alt={experience.company_name}
@@ -37,26 +31,17 @@ const ExperienceCard = ({ experience }) => {
                 objectFit: 'contain',
               }}
             />
-          </div>
+          </ResponsiveIconContainer>
         }
       >
         <div>
-          <h3 style={{ color: 'white', fontSize: '2.5rem', fontWeight: 'bold' }}>
-            {experience.title}
-          </h3>
-          <p style={{ color: '#d1d5db', fontSize: '2rem', fontWeight: '600', margin: 0 }}>
-            {experience.company_name}
-          </p>
+          <TitleText>{experience.title}</TitleText>
+          <CompanyName>{experience.company_name}</CompanyName>
         </div>
   
         <ul className="bullet-list" style={{ marginTop: '0.625rem' }}>
             {experience.points.map((point, index) => (
-                <li
-                key={`experience-point-${index}`}
-                style={{ color: 'white', fontSize: '2rem', paddingLeft: '0.5rem', letterSpacing: 'wider' }}
-              >
-                {point}
-              </li>
+              <PointItem key={`experience-point-${index}`}>{point}</PointItem>
             ))}
         </ul>
       </VerticalTimelineElement>

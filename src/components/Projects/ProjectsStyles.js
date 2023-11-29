@@ -146,7 +146,8 @@ export const ProjectCardContainer = styled.div`
     cursor: pointer;
     background: linear-gradient(to right, #0ea5e9, #6366f1);
     padding: 5px;
-    margin-right: 10px;
+    margin-right: 2rem;
+    margin-top: 2rem;
 
     &:hover {
       background: linear-gradient(to right, #53c0f3, #8a85ff); // Brighter gradient on hover
@@ -155,8 +156,8 @@ export const ProjectCardContainer = styled.div`
 
     // Styled component for the icon
     export const IconStyle = styled.div`
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    height: 80%;
     object-fit: contain;
 
     // Apply styles to the actual icon within IconStyle
@@ -191,7 +192,7 @@ export const ProjectCardContainer = styled.div`
   
     // Styled component for the project tags
     export const ProjectTag = styled.p`
-      margin-top: 10px;
+      margin-top: 1.5rem;
       display: inline-block;
       margin-right: 8px;
       font-size: 1.75rem;

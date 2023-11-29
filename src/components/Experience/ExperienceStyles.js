@@ -145,3 +145,75 @@ export const StyledListItem = styled.li`
   font-size: 24px;
   letter-spacing: wider;
 `;
+
+
+// From here
+
+// Styled components with media queries for RWD
+export const DateText = styled.div`
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-right: 0rem;
+    margin-left: 0rem;
+    margin-top: 1rem;
+  }
+`;
+
+export const TitleText = styled.h3`
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+`;
+
+export const CompanyName = styled.p`
+  && {
+    color:rgba(184, 188, 194, 1.0);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    @media (max-width: 768px) {
+      font-size: 1.5rem; // Example of reduced size for smaller screens
+    }
+  }
+`;
+
+export const PointItem = styled.li`
+  color: white;
+  font-size: 2rem;
+  padding-left: 0.5rem;
+  letter-spacing: wider;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+// Responsive Icon Styled Component
+export const ResponsiveIconContainer = styled.div`
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 6rem;  // default size
+  height: 6rem; // default size
+
+  @media (max-width: 768px) {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  img {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain;
+  }
+`;
