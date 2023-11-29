@@ -5,6 +5,7 @@ import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalCompon
 import { projects } from '../../constants/constants';
 import { AiFillGithub } from 'react-icons/ai';
 import { FaExternalLinkAlt } from "react-icons/fa";
+import styled from 'styled-components';
 
 
 const Projects = () => (
@@ -38,19 +39,32 @@ const Projects = () => (
   </Section>
 );
 
-const cardWidth = 'calc(50% - 1.75rem)'
-
 const ProjectCard = ({ project, index }) => {
   const { name, description, tags, image, sourceCodeLink, deployedLink } =
     project;
-  const cardStyles = {
-    width: cardWidth,
-    height: '500px',
-    border: '1px solid transparent',
-    borderRadius: '20px',
-    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
-  };
 
+  const ProjectCardContainer = styled.div`
+    display: flex;
+    flex-direction: column; // Stack elements vertically
+    justify-content: space-between; // Distribute space evenly
+    align-items: center; // Center items horizontally
+    width: calc(50% - 1.75rem);
+    height: 500px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px; // Add some padding
+
+    @media (max-width: 600px) {
+      width: 100%;
+      height: 400px; // Reduced height for smaller screens
+    }
+  
+    @media (max-width: 400px) {
+      height: 450px; // Further reduced height for very small screens
+    }
+  `;
+  
   const innerContainerStyles = {
     position: 'relative',
     width: '100%',
@@ -78,50 +92,75 @@ const ProjectCard = ({ project, index }) => {
     margin: '3px',
   };
 
-  const linkButtonStyles = {
-    width: '40px', // Increase the width as needed
-    height: '40px', // Increase the height as needed
-    borderRadius: '50%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    cursor: 'pointer',
-    background: 'linear-gradient(to right, #0ea5e9, #6366f1)', // Your gradient here
-    padding: '5px', // Add padding to make the background larger than the icon
-    marginRight: '10px',
-  };
+        // Styled component for the button
+    const LinkButton = styled.div`
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: linear-gradient(to right, #0ea5e9, #6366f1);
+    padding: 5px;
+    margin-right: 10px;
 
+    &:hover {
+      background: linear-gradient(to right, #53c0f3, #8a85ff); // Brighter gradient on hover
+    }
+    `;
 
-  const iconStyles = {
-    width: '70%', // Adjust as needed, ensuring it's smaller than the linkButtonStyles dimensions
-    height: '70%', // Adjust as needed
-    objectFit: 'contain'
-  };
+    // Styled component for the icon
+    const IconStyle = styled.div`
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
 
-  const nameStyles = {
-    marginTop: '20px',
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: '2.5rem',
-  };
+    // Apply styles to the actual icon within IconStyle
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    `;
 
-  const descriptionStyles = {
-    marginTop: '24px',
-    color: '#6b7280',
-    fontSize: '2rem',
-    color: '#fff'
-  };
+  // Styled component for the project name
+  const ProjectName = styled.div`
+    margin-top: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 2.5rem;
 
-  const tagStyles = {
-    marginTop: '10px',
-    display: 'inline-block',
-    marginRight: '8px',
-    fontSize: '1.75rem',
-    color: '#93c5fd',
-  };
+    @media (max-width: 600px) {
+      font-size: 2rem; // Smaller font size on small screens
+    }
+    `;
+
+  // Styled component for the project description
+  const ProjectDescription = styled.p`
+    margin-top: 24px;
+    color: #fff; // No need to repeat color property
+    font-size: 2rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.5rem; // Smaller font size on small screens
+    }
+    `;
+
+  // Styled component for the project tags
+  const ProjectTag = styled.p`
+    margin-top: 10px;
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 1.75rem;
+    color: #93c5fd;
+
+    @media (max-width: 600px) {
+      font-size: 1.5rem; // Smaller font size on small screens
+    }
+    `;
 
   return (
-    <div style={cardStyles}>
+    <ProjectCardContainer>
       <div style={innerContainerStyles}>
         <div style={imageStyles}>
           <img
@@ -133,40 +172,29 @@ const ProjectCard = ({ project, index }) => {
         </div>
         <div style={buttonContainerStyles}>
           {deployedLink && (
-            <div
-              onClick={() => window.open(deployedLink, "_blank")}
-              style={linkButtonStyles}
-            >
-              <FaExternalLinkAlt
-                style={iconStyles}
-                alt="link"
-              />
-            </div>
+            <LinkButton onClick={() => window.open(deployedLink, "_blank")}>
+              <IconStyle>
+                <FaExternalLinkAlt alt="link" />
+              </IconStyle>
+            </LinkButton>
           )}
-          <div
-            onClick={() => window.open(sourceCodeLink, "_blank")}
-            style={linkButtonStyles}
-          >
-            <AiFillGithub
-              style={iconStyles}
-              alt="github"
-            />
-          </div>
+          <LinkButton onClick={() => window.open(sourceCodeLink, "_blank")}>
+            <IconStyle>
+              <AiFillGithub alt="github" />
+            </IconStyle>
+          </LinkButton>
         </div>
-        <div style={nameStyles}>{name}</div>
-        <p style={descriptionStyles}>{description}</p>
+        <ProjectName>{name}</ProjectName>
+        <ProjectDescription>{description}</ProjectDescription>
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag, tagIndex) => (
-            <p
-              key={`${index}-${tagIndex}`}
-              style={tagStyles}
-            >
+            <ProjectTag key={`${index}-${tagIndex}`}>
               #{tag.name}
-            </p>
+            </ProjectTag>
           ))}
         </div>
       </div>
-    </div>
+    </ProjectCardContainer>
   );
 };
 

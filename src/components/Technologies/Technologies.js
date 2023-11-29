@@ -1,6 +1,8 @@
 import React from 'react';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { skills } from '../../constants/constants'
+import styled from 'styled-components';
+
 
 const Technologies = () =>  (
   <Section nopadding id="skills">
@@ -12,11 +14,14 @@ const Technologies = () =>  (
     </SectionText>
     <div
       style={{
-         // 14 * 0.25rem
         display: 'flex',
-        justifyContent: 'flex-start', // center if needed 
+        justifyContent: 'flex-start', // Left aligned by default
         flexWrap: 'wrap',
-        gap: '1rem', // 4 * 0.25rem
+        gap: '1rem',
+        '@media (max-width: 400px)': { // Media query for smaller screens
+          justifyContent: 'space-evenly', // Center aligned for small screens
+          gap: '2rem'
+        },
       }}
     >
       {skills.map((technology, index) => (
@@ -30,8 +35,8 @@ const TechCard = ({ index, title, icon }) => {
   // Inline styles for the div
   const divStyle = {
     borderRadius: '20px',
-    width: '200px', // Fixed width
-    height: '250px', // Fixed height
+    width: '150px', // Fixed width
+    height: '200px', // Fixed height
     paddingTop: '20px',
     paddingBottom: '20px',
     paddingLeft: '32px',
@@ -45,12 +50,16 @@ const TechCard = ({ index, title, icon }) => {
   };
 
   // Inline styles for the paragraph
-  const paragraphStyle = {
-    color: 'white',
-    fontSize: '2rem', // Default font size
-    fontWeight: '600', // Semibold
-    textAlign: 'center',
-  };
+  const Paragraph = styled.p`
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+
+    @media (max-width: 400px) {
+      font-size: 1.5rem;
+    }
+  `;
 
   return (
     <div style={divStyle}>
@@ -62,9 +71,7 @@ const TechCard = ({ index, title, icon }) => {
           style={{ width: '64px', height: '64px', objectFit: 'contain' }}
         />
       )}
-      <p style={paragraphStyle}>
-        {title}
-      </p>
+      <Paragraph>{title}</Paragraph>
     </div>
   );
 };
