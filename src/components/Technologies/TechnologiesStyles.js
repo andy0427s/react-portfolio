@@ -131,3 +131,16 @@ export const ListIcon = styled.img`
     margin-bottom: 0px;
   }
 `
+// From here
+
+// Inline styles for the paragraph
+export const Paragraph = styled.p`
+color: white;
+font-size: 2rem;
+font-weight: 600;
+text-align: center;
+
+@media (max-width: 400px) {
+  font-size: 1.5rem;
+}
+`;

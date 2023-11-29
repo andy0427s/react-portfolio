@@ -1,5 +1,6 @@
 import React from 'react';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { Paragraph } from './TechnologiesStyles';
 import { skills } from '../../constants/constants'
 import styled from 'styled-components';
 
@@ -48,18 +49,6 @@ const TechCard = ({ index, title, icon }) => {
     flexDirection: 'column',
     // Add styles for glassmorphism here if you know them
   };
-
-  // Inline styles for the paragraph
-  const Paragraph = styled.p`
-    color: white;
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-
-    @media (max-width: 400px) {
-      font-size: 1.5rem;
-    }
-  `;
 
   return (
     <div style={divStyle}>
