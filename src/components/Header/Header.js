@@ -9,7 +9,7 @@ import { Container, Div1, Div2, Div3, NavLink, SocialIcons } from './HeaderStyle
 const Header = () =>  (
   <Container>
     <Div1>
-      <Link href="/">
+      <Link href="/" legacyBehavior>
         <a style={{ display: 'flex', alignItems: 'center', color:"white" }}>
           <DiCssdeck size="4rem" /> <span style={{ fontSize: '2rem' }}>T.L Portfolio</span>
         </a>
@@ -17,17 +17,17 @@ const Header = () =>  (
     </Div1>
     <Div2>
       <li>
-        <Link href="#experiences">
+        <Link href="#experiences" legacyBehavior>
           <NavLink>Experience</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#skills">
+        <Link href="#skills" legacyBehavior>
           <NavLink>Skills</NavLink>
         </Link>
       </li>        
       <li>
-        <Link href="#projects">
+        <Link href="#projects" legacyBehavior>
           <NavLink>Projects</NavLink>
         </Link>
       </li>      
