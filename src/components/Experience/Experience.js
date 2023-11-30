@@ -26,8 +26,8 @@ const ExperienceCard = ({ experience }) => {
               src={experience.icon}
               alt={experience.company_name}
               style={{
-                maxWidth: '100%', 
-                maxHeight: '100%', 
+                maxWidth: '70%', 
+                maxHeight: '70%', 
                 objectFit: 'contain',
               }}
             />

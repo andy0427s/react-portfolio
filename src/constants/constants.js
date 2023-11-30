@@ -4,7 +4,7 @@ export const skills = [
     icon: "/images/skills/html.png",
   },
   {
-    title: "CSS/SASS",
+    title: "CSS",
     icon: "/images/skills/css.png",
   },
   {
@@ -12,20 +12,20 @@ export const skills = [
     icon: "/images/skills/javascript.png",
   },
   {
-    title: "TypeScript",
-    icon: "/images/skills/typescript.png",
-  },
-  {
     title: "React",
     icon: "/images/skills/reactjs.png",
   },
   {
-    title: "Redux",
-    icon: "/images/skills/redux.png",
+    title: "Python",
+    icon: "/images/skills/python.png",
   },
   {
-    title: "Node JS",
-    icon: "/images/skills/nodejs.png",
+    title: "Java",
+    icon: "/images/skills/java.png",
+  },
+  {
+    title: "Spring",
+    icon: "/images/skills/spring.png",
   },
   {
     title: "Git",
@@ -36,8 +36,24 @@ export const skills = [
     icon: "/images/skills/mongodb.png",
   },
   {
-    title: "Figma",
-    icon: "/images/skills/figma.png",
+    title: "PostgreSQL",
+    icon: "/images/skills/postgre.png",
+  },
+  {
+    title: "Linux",
+    icon: "/images/skills/linux.png",
+  },
+  {
+    title: "Azure",
+    icon: "/images/skills/azure.png",
+  },
+  {
+    title: "Docker",
+    icon: "/images/skills/docker.png",
+  },
+  {
+    title: "Jira",
+    icon: "/images/skills/jira.png",
   }
 ];
 
@@ -125,55 +141,41 @@ export const projects = [
 
 export const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: "/images/experiences/starbucks.png",
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: "/images/experiences/tesla.png",
+    title: "Software Engineer Placement",
+    company_name: "Lifecycle Software Ltd",
+    icon: "/images/experiences/lifecycle.jpeg",
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Sep 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed new functionalities for eWarehouse (EW), a high-volume billing platform, using Java and Spring Boot Framework.",
+      "Performed database CRUD operations in PostgreSQL and MongoDB. Integrated Hibernate for object-relational mapping and utilized Datagrip for advanced database management.",
+      "Built and debugged RESTful APIs essential for seamless communication between different Lifecycle modules.",
+      "Utilized Postman for endpoint testing, Swagger for API documentation, and leveraged JUnit and Mockito for testing.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: "/images/experiences/shopify.png",
+    title: "Software Engineer Intern",
+    company_name: "Therapyworks",
+    icon: "/images/experiences/therapy.png",
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Feb 2023 - Apr 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Designed and implemented seamless and intuitive user interface components for the Therapyworks physiotherapy app using Vue.js, enhancing overall user experience.",
+      "Implemented key features for the Therapyworks physiotherapy app, including exercise tracking, appointment scheduling, and video tutorials, using Flask and Python to enrich user engagement and functionality.",
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: "/images/experiences/meta.png",
+    title: "MSc Computing with Placement",
+    company_name: "Cardiff University",
+    icon: "/images/experiences/cardiff.png",
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "Sep 2022 - Aug 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Data structures and Algorithms",
+      "Database and Modelling",
+      "Web Development",
+      "Programming in Python, Javascript and Java", 
+      "Software Engineering",
     ],
   },
 ];
