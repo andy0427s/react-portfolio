@@ -8,6 +8,43 @@ import SectionWrapper from '../SectionWrapper';
 import { motion, useInView } from "framer-motion";
 import { fadeIn, textVariant } from "../../utils/motion";
 
+const Experience = () =>  {
+
+  const ref = useRef(null);
+  const textAnimation = textVariant();
+
+
+  return (
+    <Section id="experiences" ref={ref}>
+      <SectionDivider divider />
+      <motion.div 
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+        variants={textAnimation} 
+      >
+        <SectionTitle>Experience</SectionTitle>
+        <SectionText>
+        I am a Software Engineer Placement at Lifecycle Software Ltd since September 2023. 
+        Prior to this, I was a Software Engineer Intern at Therapyworks (Feb-Apr 2023), and I have MSc Computing degree from Cardiff University, which has provided a strong foundation for my technical skills and software development knowledge.
+        </SectionText>
+        </motion.div>
+      
+      <div style={{ marginTop: '5rem', display: 'flex', flexDirection: 'column' }}>
+          <VerticalTimeline>
+            {experiences.map((experience, index) => (
+              <ExperienceCard
+                key={`experience-${index}`}
+                experience={experience}
+              />
+            ))}
+          </VerticalTimeline>
+        </div>
+    </Section>
+  );
+}
+
+
 const ExperienceCard = ({ experience }) => {
     return (
       <VerticalTimelineElement
@@ -50,42 +87,6 @@ const ExperienceCard = ({ experience }) => {
     );
   };
 
-const Experience = () =>  {
-
-  const ref = useRef(null);
-
-  return (
-    <Section id="experiences" ref={ref}>
-      <SectionDivider divider />
-      <motion.div 
-        initial={{ y: -50, opacity: 0 }}
-        whileInView={{ 
-          y: 0, 
-          opacity: 1,
-          transition:{ type: "spring", duration: 1.25}
-        }}
-        viewport={{ once: true, amount: 0.25}}
-      >
-        <SectionTitle>Experience</SectionTitle>
-        <SectionText>
-        I am a Software Engineer Placement at Lifecycle Software Ltd since September 2023. 
-        Prior to this, I was a Software Engineer Intern at Therapyworks (Feb-Apr 2023), and I have MSc Computing degree from Cardiff University, which has provided a strong foundation for my technical skills and software development knowledge.
-        </SectionText>
-        </motion.div>
-      
-      <div style={{ marginTop: '5rem', display: 'flex', flexDirection: 'column' }}>
-          <VerticalTimeline>
-            {experiences.map((experience, index) => (
-              <ExperienceCard
-                key={`experience-${index}`}
-                experience={experience}
-              />
-            ))}
-          </VerticalTimeline>
-        </div>
-    </Section>
-  );
-}
 
 
 export default Experience;

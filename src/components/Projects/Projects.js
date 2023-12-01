@@ -6,23 +6,25 @@ import { projects } from '../../constants/constants';
 import { AiFillGithub } from 'react-icons/ai';
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { motion, whileInView } from "framer-motion";
+import { textVariant, fadeIn } from '../../utils/motion';
 
 
 const Projects = () => {
 
   const ref = useRef(null);
+  const textAnimation = textVariant();
+  const [isSectionInView, setIsSectionInView] = useState(false);
  
   return (
     <Section id="projects" ref={ref}>
       <SectionDivider divider/>
       <motion.div 
-        initial={{ y: -50, opacity: 0 }}
-        whileInView={{ 
-          y: 0, 
-          opacity: 1,
-          transition:{ type: "spring", duration: 1.25}
-        }}
-        viewport={{ once: true, amount: 0.25}}
+        initial="hidden"
+        whileInView="show"
+        onViewportEnter={() => setIsSectionInView(true)}
+        onViewportLeave={() => setIsSectionInView(false)}
+        viewport={{ once: true, amount: 0.25 }}
+        variants={textAnimation} 
       >
         <SectionTitle >Projects</SectionTitle>
       </motion.div>
@@ -44,6 +46,7 @@ const Projects = () => {
             key={`project-${index}`}
             index={index}
             project={project}
+            isInView={isSectionInView}
           />
         ))}
       </div>
@@ -53,7 +56,7 @@ const Projects = () => {
   );
 }
 
-const ProjectCard = ({ project, index}) => {
+const ProjectCard = ({ project, index, isInView}) => {
 
   const { name, description, tags, image, sourceCodeLink, deployedLink } =
     project;
@@ -116,30 +119,14 @@ const ProjectCard = ({ project, index}) => {
     margin: '3px',
   };
 
-  const direction = "up"; // Example direction, adjust as needed
-  const delay = 0.3 * index; // Example delay, adjust as needed
-  const duration = 0.65; // Example duration, adjust as needed
+  const fadeInAnimation = fadeIn("up", "spring", 0.4 * index, 0.75); // Example direction, type, delay, duration
 
   return (
     <motion.div
-      initial={{
-        x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
-        y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
-        opacity: 0
-      }}
-      whileInView={{ 
-        x: 0, 
-        y: 0, 
-        opacity: 1,
-        transition:{ 
-          type: "spring", 
-          delay: delay, 
-          duration: duration, 
-          ease: "easeOut"
-        }
-      }}
-      viewport={{ once: true, amount: 0.25 }}
       style={outerContainerStyles}
+      initial="hidden"
+      animate={isInView ? "show" : "hidden"}
+      variants={fadeInAnimation}
     >
       <div style={innerContainerStyles}>
         <div style={imageStyles}>
