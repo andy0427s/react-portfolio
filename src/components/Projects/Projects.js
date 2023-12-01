@@ -1,22 +1,29 @@
-import React from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 
 import {ProjectCardContainer,LinkButton,IconStyle,ProjectName,ProjectDescription,ProjectTag} from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
 import { AiFillGithub } from 'react-icons/ai';
 import { FaExternalLinkAlt } from "react-icons/fa";
-import SectionWrapper from '../SectionWrapper';
-import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../../utils/motion";
+import { motion, whileInView } from "framer-motion";
+
 
 const Projects = () => {
 
-  const AnimatedSection = SectionWrapper(Section);
-
+  const ref = useRef(null);
+ 
   return (
-    <AnimatedSection id="projects">
+    <Section id="projects" ref={ref}>
       <SectionDivider divider/>
-      <motion.div variants={textVariant()}>
+      <motion.div 
+        initial={{ y: -50, opacity: 0 }}
+        whileInView={{ 
+          y: 0, 
+          opacity: 1,
+          transition:{ type: "spring", duration: 1.25}
+        }}
+        viewport={{ once: true, amount: 0.25}}
+      >
         <SectionTitle >Projects</SectionTitle>
       </motion.div>
       <div
@@ -42,16 +49,45 @@ const Projects = () => {
       </div>
   
       
-    </AnimatedSection>
+    </Section>
   );
 }
 
-const ProjectCard = ({ project, index }) => {
-
-  const MotionProjectCardContainer = motion(ProjectCardContainer);
+const ProjectCard = ({ project, index}) => {
 
   const { name, description, tags, image, sourceCodeLink, deployedLink } =
     project;
+
+  // Initialize state with undefined or a default value
+  const [screenWidth, setScreenWidth] = useState(undefined);
+
+  useEffect(() => {
+    // Set the screen width when the component mounts
+    setScreenWidth(window.innerWidth);
+
+    // Function to handle resize events
+    const handleResize = () => setScreenWidth(window.innerWidth);
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); // Empty array ensures this effect runs only once on mount
+
+  const outerContainerStyles = {
+    display: 'flex',
+    flexDirection: 'column', // Stack elements vertically
+    justifyContent: 'space-between', // Distribute space evenly
+    alignItems: 'center', // Center items horizontally
+    width: screenWidth <= 600 ? '100%' : 'calc(50% - 1.75rem)',
+    height: screenWidth <= 400 ? '450px' : screenWidth <= 600 ? '400px' : '500px',
+    border: '1px solid transparent',
+    borderRadius: '20px',
+    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
+    padding: '5px' // Add some padding
+  };
+    
 
   const innerContainerStyles = {
     position: 'relative',
@@ -80,9 +116,30 @@ const ProjectCard = ({ project, index }) => {
     margin: '3px',
   };
 
+  const direction = "up"; // Example direction, adjust as needed
+  const delay = 0.3 * index; // Example delay, adjust as needed
+  const duration = 0.65; // Example duration, adjust as needed
+
   return (
-    <MotionProjectCardContainer
-      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+    <motion.div
+      initial={{
+        x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
+        y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+        opacity: 0
+      }}
+      whileInView={{ 
+        x: 0, 
+        y: 0, 
+        opacity: 1,
+        transition:{ 
+          type: "spring", 
+          delay: delay, 
+          duration: duration, 
+          ease: "easeOut"
+        }
+      }}
+      viewport={{ once: true, amount: 0.25 }}
+      style={outerContainerStyles}
     >
       <div style={innerContainerStyles}>
         <div style={imageStyles}>
@@ -117,7 +174,7 @@ const ProjectCard = ({ project, index }) => {
           ))}
         </div>
       </div>
-    </MotionProjectCardContainer>
+    </motion.div>
   );
 };
 

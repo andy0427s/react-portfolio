@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import {VerticalTimeline, VerticalTimelineElement} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { experiences } from "../../constants/constants";
 import { DateText, TitleText, CompanyName, PointItem, ResponsiveIconContainer} from './ExperienceStyles'; // Import from wherever you've defined them
 import SectionWrapper from '../SectionWrapper';
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { fadeIn, textVariant } from "../../utils/motion";
 
 const ExperienceCard = ({ experience }) => {
@@ -52,19 +52,26 @@ const ExperienceCard = ({ experience }) => {
 
 const Experience = () =>  {
 
-  const AnimatedSection = SectionWrapper(Section);
+  const ref = useRef(null);
 
   return (
-    <AnimatedSection id="experiences">
-      
-      <motion.div variants={textVariant()}>
-        <SectionDivider divider />
+    <Section id="experiences" ref={ref}>
+      <SectionDivider divider />
+      <motion.div 
+        initial={{ y: -50, opacity: 0 }}
+        whileInView={{ 
+          y: 0, 
+          opacity: 1,
+          transition:{ type: "spring", duration: 1.25}
+        }}
+        viewport={{ once: true, amount: 0.25}}
+      >
         <SectionTitle>Experience</SectionTitle>
         <SectionText>
         I am a Software Engineer Placement at Lifecycle Software Ltd since September 2023. 
         Prior to this, I was a Software Engineer Intern at Therapyworks (Feb-Apr 2023), and I have MSc Computing degree from Cardiff University, which has provided a strong foundation for my technical skills and software development knowledge.
         </SectionText>
-      </motion.div>
+        </motion.div>
       
       <div style={{ marginTop: '5rem', display: 'flex', flexDirection: 'column' }}>
           <VerticalTimeline>
@@ -76,7 +83,7 @@ const Experience = () =>  {
             ))}
           </VerticalTimeline>
         </div>
-    </AnimatedSection>
+    </Section>
   );
 }
 
