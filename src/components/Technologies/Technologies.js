@@ -30,7 +30,11 @@ const Technologies = () => {
       </motion.div>
       <GridContainer>
         {skills.map((technology, index) => (
-          <TechCard key={technology.title} index={index} {...technology} isInView={isSectionInView}/>
+          <TechCard 
+          key={technology.title} 
+          index={index} 
+          {...technology} 
+          isInView={isSectionInView}/>
         ))}
       </GridContainer>
     </Section>
