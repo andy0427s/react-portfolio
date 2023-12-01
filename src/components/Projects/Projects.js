@@ -119,7 +119,7 @@ const ProjectCard = ({ project, index, isInView}) => {
     margin: '3px',
   };
 
-  const fadeInAnimation = fadeIn("up", "spring", 0.4 * index, 0.75); // Example direction, type, delay, duration
+  const fadeInAnimation = fadeIn("up", "spring", 0.5 * index, 0.75); // Example direction, type, delay, duration
 
   return (
     <motion.div
