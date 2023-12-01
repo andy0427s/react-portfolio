@@ -120,6 +120,7 @@ const ProjectCard = ({ project, index, isInView}) => {
   };
 
   const fadeInAnimation = fadeIn("up", "spring", 0.5 * index, 0.75); // Example direction, type, delay, duration
+  const MotionLinkButton = motion(LinkButton);
 
   return (
     <motion.div
@@ -139,17 +140,31 @@ const ProjectCard = ({ project, index, isInView}) => {
         </div>
         <div style={buttonContainerStyles}>
           {deployedLink && (
-            <LinkButton onClick={() => window.open(deployedLink, "_blank")}>
+            <MotionLinkButton 
+            onClick={() => window.open(deployedLink, "_blank")}
+            whileHover={{ 
+              scale: 1.1,
+              background: 'linear-gradient(to right, #53c0f3, #8a85ff)' // Brighter gradient on hover
+            }}
+            whileTap={{ scale: 0.9 }}            
+            >
               <IconStyle>
                 <FaExternalLinkAlt alt="link" />
               </IconStyle>
-            </LinkButton>
+            </MotionLinkButton>
           )}
-          <LinkButton onClick={() => window.open(sourceCodeLink, "_blank")}>
+          <MotionLinkButton 
+          onClick={() => window.open(sourceCodeLink, "_blank")}
+          whileHover={{ 
+            scale: 1.1,
+            background: 'linear-gradient(to right, #53c0f3, #8a85ff)' // Brighter gradient on hover
+          }}
+          whileTap={{ scale: 0.9 }}  
+          >
             <IconStyle>
               <AiFillGithub alt="github" />
             </IconStyle>
-          </LinkButton>
+          </MotionLinkButton>
         </div>
         <ProjectName>{name}</ProjectName>
         <ProjectDescription>{description}</ProjectDescription>

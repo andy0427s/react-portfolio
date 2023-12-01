@@ -148,10 +148,6 @@ export const ProjectCardContainer = styled.div`
     padding: 5px;
     margin-right: 2rem;
     margin-top: 2rem;
-
-    &:hover {
-      background: linear-gradient(to right, #53c0f3, #8a85ff); // Brighter gradient on hover
-    }
     `;
 
     // Styled component for the icon
