@@ -148,7 +148,7 @@ export const experiences = [
     date: "Sep 2023 - Present",
     points: [
       "Developed new functionalities for eWarehouse (EW), a high-volume billing platform, using Java and Spring Boot Framework.",
-      "Performed database CRUD operations in PostgreSQL and MongoDB. Integrated Hibernate for object-relational mapping and utilized Datagrip for advanced database management.",
+      "Implemented database CRUD operations in PostgreSQL and MongoDB.",
       "Built and debugged RESTful APIs essential for seamless communication between different Lifecycle modules.",
       "Utilized Postman for endpoint testing, Swagger for API documentation, and leveraged JUnit and Mockito for testing.",
     ],
@@ -160,8 +160,8 @@ export const experiences = [
     iconBg: "#383E56",
     date: "Feb 2023 - Apr 2023",
     points: [
-      "Designed and implemented seamless and intuitive user interface components for the Therapyworks physiotherapy app using Vue.js, enhancing overall user experience.",
-      "Implemented key features for the Therapyworks physiotherapy app, including exercise tracking, appointment scheduling, and video tutorials, using Flask and Python to enrich user engagement and functionality.",
+      "Designed and implemented seamless and intuitive user interface components for the Therapyworks physiotherapy app using React.js.",
+      "Implemented key features for the Therapyworks physiotherapy app, including exercise tracking, appointment scheduling, and video tutorials, using Django and Python.",
     ],
   },
   {

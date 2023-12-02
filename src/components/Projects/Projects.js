@@ -17,7 +17,7 @@ const Projects = () => {
  
   return (
     <Section id="projects" ref={ref}>
-      <SectionDivider divider/>
+      
       <motion.div 
         initial="hidden"
         whileInView="show"
@@ -26,6 +26,7 @@ const Projects = () => {
         viewport={{ once: true, amount: 0.25 }}
         variants={textAnimation} 
       >
+        <SectionDivider divider/>
         <SectionTitle >Projects</SectionTitle>
       </motion.div>
       <div

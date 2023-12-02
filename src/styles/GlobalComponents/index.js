@@ -12,6 +12,9 @@ export const Section = styled.section`
   position: relative;
   overflow: hidden;
   grid-template-columns: 1fr 1fr;
+  justify-content: ${(props) => props.centered ? "center" : "flex-start"};
+  // align-items: ${(props) => props.centered ? "center" : "stretch"};
+
 
   @media ${(props) => props.theme.breakpoints.md} {
     padding: 24px 48px 0;
@@ -27,6 +30,7 @@ export const Section = styled.section`
     flex-direction: column;
     margin-top: 0rem;
     margin-bottom: 0rem;
+    height: ${(props) => props.centered ? "40vh" : "auto"};
   }
 `
 
@@ -65,8 +69,9 @@ export const SectionText = styled.p`
   line-height: 40px;
   font-weight: 300;
   padding-bottom: 3.6rem;
-  color: rgba(255, 255, 255, 0.5);
-  margin-top: 20px;
+  // color: rgba(255, 255, 255, 0.5);
+  color: rgba(184, 188, 194, 1);
+  margin-top: ${(props) => props.main ? '20px' : '40px'};
   margin-bottom: auto;
 
   @media ${(props) => props.theme.breakpoints.md} {

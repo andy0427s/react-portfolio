@@ -4,7 +4,6 @@ import {VerticalTimeline, VerticalTimelineElement} from "react-vertical-timeline
 import "react-vertical-timeline-component/style.min.css";
 import { experiences } from "../../constants/constants";
 import { DateText, TitleText, CompanyName, PointItem, ResponsiveIconContainer} from './ExperienceStyles'; // Import from wherever you've defined them
-import SectionWrapper from '../SectionWrapper';
 import { motion, useInView } from "framer-motion";
 import { fadeIn, textVariant } from "../../utils/motion";
 
@@ -16,13 +15,14 @@ const Experience = () =>  {
 
   return (
     <Section id="experiences" ref={ref}>
-      <SectionDivider divider />
+      
       <motion.div 
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
         variants={textAnimation} 
       >
+        <SectionDivider divider />
         <SectionTitle>Experience</SectionTitle>
         <SectionText>
         I am a Software Engineer Placement at Lifecycle Software Ltd since September 2023. 

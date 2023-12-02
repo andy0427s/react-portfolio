@@ -16,10 +16,10 @@ const Hero = (props) => {
     <>
       <Section row nopadding>
         <LeftSection>
-          <SectionTitle main center>
+          <SectionTitle main>
             Hi! I'm Tsang An Lee
           </SectionTitle>
-          <SectionText>
+          <SectionText main>
           A backend develper skilled in Java, Spring Boot, and database management. Seeking a graduate role in software engineering to further hone my technical skills and contribute to innovative projects.
           </SectionText>
           <Button onClick={handleDownload}>Download My CV</Button>

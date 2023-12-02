@@ -185,11 +185,16 @@ export const CompanyName = styled.p`
 
 export const PointItem = styled.li`
   color: white;
-  font-size: 2rem;
-  padding-left: 0.5rem;
-  letter-spacing: wider;
+  font-size: 2rem; // This sets the font size for the list item
+  padding-left: 2.5rem; // This adds space to the left of the bullet, which may need to be adjusted based on the font size
+  letter-spacing: wider; // This sets the spacing between letters, which can affect how the text aligns with the bullet
+  text-indent: -2.5rem; // This pulls the first line of the list item to the left to align with the bullet
+
+
   @media (max-width: 768px) {
     font-size: 1.5rem;
+    text-indent: -2rem;
+    padding-left: 2rem
   }
 `;
 

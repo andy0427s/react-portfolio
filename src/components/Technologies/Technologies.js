@@ -13,7 +13,7 @@ const Technologies = () => {
 
   return (
     <Section id="skills" ref={ref}>
-      <SectionDivider divider />
+      
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -22,6 +22,7 @@ const Technologies = () => {
         viewport={{ once: true, amount: 0.25 }}
         variants={textAnimation} 
       >
+        <SectionDivider divider />
         <SectionTitle>Technical Skills</SectionTitle>
         <SectionText>
         I am proficient in multiple programming languages including Java, Python, SQL, HTML/CSS, and Javascript. 
