@@ -78,7 +78,14 @@ const ExperienceCard = ({ experience }) => {
           <CompanyName>{experience.company_name}</CompanyName>
         </div>
   
-        <ul className="bullet-list" style={{ marginTop: '0.625rem' }}>
+        <ul 
+          className="bullet-list" 
+          style={{ 
+            marginTop: '0.625rem', 
+            paddingLeft: '0', // Removes default padding
+            margin: '0', // Resets any default margins
+            listStylePosition: 'inside' // Positions the bullet points inside the list item element
+            }}>
             {experience.points.map((point, index) => (
               <PointItem key={`experience-point-${index}`}>{point}</PointItem>
             ))}

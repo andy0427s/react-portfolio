@@ -32,12 +32,6 @@ const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
-  .bullet-list li {
-    list-style: disc inside;
-    margin-top: 10px;
-    margin-left: 0px;
-  }
-
 `;
 
 export default GlobalStyles;
